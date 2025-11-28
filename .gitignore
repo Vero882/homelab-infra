@@ -1,0 +1,12 @@
+# Sensitive Information
+.vault
+.vault_pass
+secrets.yml
+credentials.yml
+
+# Configuration-Dependent Content
+ansible/inventory
+
+# Generated Files and Cache
+*.retry
+*.log
