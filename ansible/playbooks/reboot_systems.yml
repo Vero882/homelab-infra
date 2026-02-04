@@ -13,8 +13,10 @@
     - name: Reboot if required.
       ansible.builtin.reboot:
       when: reboot_required_file.stat.exists == True
+      notify: Notify reboot
 
-    - name: Notify server was rebooted.
+  handlers:
+    - name: Notify reboot 
       community.general.discord:
         webhook_id: "{{ discord_webhook_id }}"
         webhook_token: "{{ discord_webhook_token }}"
